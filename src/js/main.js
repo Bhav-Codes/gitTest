@@ -29,9 +29,20 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Simple hover state logic for cards if needed in the future
-  const cards = document.querySelectorAll('.card');
-  cards.forEach(card => {
+  // Portfolio Card Interactions
+  const projectCards = document.querySelectorAll('.project-card');
+  projectCards.forEach(card => {
+    card.addEventListener('click', () => {
+      const title = card.querySelector('h3').innerText;
+      console.log(`Opening details for: ${title}`);
+      // Future: Open a modal or navigate to a project page
+      alert(`Feature coming soon: Detailed view for "${title}"`);
+    });
+  });
+
+  // Simple hover state logic for features
+  const featureCards = document.querySelectorAll('.card');
+  featureCards.forEach(card => {
     card.addEventListener('mouseenter', () => {
       console.log('Hover on feature card');
     });
