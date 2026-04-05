@@ -36,6 +36,16 @@ document.addEventListener('DOMContentLoaded', () => {
       console.log('Hover on feature card');
     });
   });
+  // Newsletter Form
+  const newsletterForm = document.getElementById('newsletter-form');
+  if (newsletterForm) {
+    newsletterForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const email = newsletterForm.querySelector('input').value;
+      alert(`Welcome to the circle! Updates will head to: ${email}`);
+      newsletterForm.reset();
+    });
+  }
 });
 
 // Update header style on scroll
