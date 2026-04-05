@@ -31,22 +31,37 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Portfolio Card Interactions
   const projectCards = document.querySelectorAll('.project-card');
-  projectCards.forEach(card => {
-    card.addEventListener('click', () => {
-      const title = card.querySelector('h3').innerText;
-      console.log(`Opening details for: ${title}`);
-      // Future: Open a modal or navigate to a project page
-      alert(`Feature coming soon: Detailed view for "${title}"`);
-    });
-  });
+  if (projectCards) {
+      projectCards.forEach(card => {
+        card.addEventListener('click', () => {
+          const title = card.querySelector('h3').innerText;
+          console.log(`Opening details for: ${title}`);
+          // Future: Open a modal or navigate to a project page
+          alert(`Feature coming soon: Detailed view for "${title}"`);
+        });
+      });
+  }
 
   // Simple hover state logic for features
   const featureCards = document.querySelectorAll('.card');
-  featureCards.forEach(card => {
-    card.addEventListener('mouseenter', () => {
-      console.log('Hover on feature card');
+  if (featureCards) {
+      featureCards.forEach(card => {
+        card.addEventListener('mouseenter', () => {
+          console.log('Hover on feature card');
+        });
+      });
+  }
+
+  // Newsletter Form
+  const newsletterForm = document.getElementById('newsletter-form');
+  if (newsletterForm) {
+    newsletterForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const email = newsletterForm.querySelector('input').value;
+      alert(`Welcome to the circle! Updates will head to: ${email}`);
+      newsletterForm.reset();
     });
-  });
+  }
 });
 
 // Update header style on scroll
